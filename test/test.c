@@ -791,7 +791,7 @@ main (void)
 
   gnutls_dh_params_init (&dh_params);
 
-  fsync((int)stderr);
+  fsync(fileno(stderr));
   gnutls_dh_params_generate2 (dh_params, DH_BITS);
 
   gnutls_anon_allocate_server_credentials (&server_credentials);
